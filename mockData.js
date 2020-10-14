@@ -12,3 +12,8 @@ export const types = [
 		name: 'Others',
 	},
 ]
+
+export const location = {
+	city: 'California',
+	country: 'US',
+}
