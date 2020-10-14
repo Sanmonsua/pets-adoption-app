@@ -24,6 +24,5 @@ export async function searchAnimals(params = {}) {
 	var {
 		data: { animals },
 	} = await client.animal.search(params)
-	console.log(animals)
 	return formatAnimals(animals)
 }
