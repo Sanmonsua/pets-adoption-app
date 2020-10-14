@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Pressable } from 'react-native'
 
 import { types, location } from '../mockData'
 import { searchAnimals } from '../api/animals'
@@ -7,7 +7,7 @@ import Location from '../components/Location'
 import AnimalTypesList from '../components/AnimalTypesList'
 import AnimalsList from '../components/AnimalsList'
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
 	var [animals, setAnimals] = useState([])
 
 	useEffect(() => {
@@ -25,7 +25,10 @@ export default function HomeScreen() {
 
 	return (
 		<View style={styles.container}>
-			<Location {...location} />
+			<Location
+				{...location}
+				onPress={() => navigation.navigate('SearchLocation')}
+			/>
 			<View>
 				<AnimalTypesList types={types} />
 			</View>
