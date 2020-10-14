@@ -2,11 +2,11 @@ import React from 'react'
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native'
 import { Entypo } from '@expo/vector-icons'
 
-export default function Location({ city, country }) {
+export default function Location({ city, country, state, onPress }) {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.label}>Location</Text>
-			<TouchableOpacity style={styles.row}>
+			<TouchableOpacity style={styles.row} onPress={onPress}>
 				<Entypo name="location-pin" size={26} color="#ff8f99" />
 				<View style={styles.titleWrapper}>
 					<Text style={styles.city}>{city}, </Text>
