@@ -1,5 +1,9 @@
 export const types = [
 	{
+		name: 'All',
+		active: true,
+	},
+	{
 		name: 'Dogs',
 	},
 	{

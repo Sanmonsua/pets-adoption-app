@@ -4,7 +4,7 @@ import { Entypo } from '@expo/vector-icons'
 
 export default function Location({ city, country }) {
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text style={styles.label}>Location</Text>
 			<TouchableOpacity style={styles.row}>
 				<Entypo name="location-pin" size={26} color="#ff8f99" />
@@ -18,6 +18,9 @@ export default function Location({ city, country }) {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		marginVertical: 20,
+	},
 	row: {
 		flexDirection: 'row',
 		alignItems: 'center',
