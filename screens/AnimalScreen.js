@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 
 import IconLabel from '../components/IconLabel'
 import Button from '../components/Button'
+import * as Linking from 'expo-linking'
 
 import { FontAwesome } from '@expo/vector-icons'
 import PhotosFlatList from '../components/PhotosFlatList'
@@ -10,11 +11,16 @@ import PhotosFlatList from '../components/PhotosFlatList'
 export default function AnimalScreen({ route }) {
 	var {
 		name,
+		url,
 		breeds: { primary: breed },
 		photos = [],
 		gender,
 		description,
 	} = route.params
+
+	function onPressAdopt() {
+		Linking.openURL(url)
+	}
 	return (
 		<ImageBackground
 			source={require('../assets/background.png')}
@@ -55,7 +61,7 @@ export default function AnimalScreen({ route }) {
 				<Text style={styles.description}>{description}</Text>
 				<PhotosFlatList photos={photos} />
 				<View style={styles.footer}>
-					<Button title="Adopt now" />
+					<Button title="Adopt now" onPress={onPressAdopt} />
 				</View>
 			</View>
 		</ImageBackground>
