@@ -1,15 +1,20 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { TouchableOpacity, Text, StyleSheet } from 'react-native'
 
-export default function AnimalType({ name, active = false }) {
+export default function AnimalType({ name, active = false, onPress }) {
 	var [backgroundColor, color, elevation] = active
 		? ['#57419d', '#f5f5f9', 4]
 		: ['#f5f5f9', '#57419d', 0]
 
 	return (
-		<View style={{ ...styles.container, backgroundColor, elevation }}>
-			<Text style={{ color }}>{name}</Text>
-		</View>
+		<TouchableOpacity
+			onPress={onPress}
+			style={{ ...styles.container, backgroundColor, elevation }}
+		>
+			<Text numberOfLines={1} style={{ color, margin: 10 }}>
+				{name}
+			</Text>
+		</TouchableOpacity>
 	)
 }
 

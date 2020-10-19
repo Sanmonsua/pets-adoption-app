@@ -10,6 +10,7 @@ export default function Location({ city, country, state, onPress }) {
 				<Entypo name="location-pin" size={26} color="#ff8f99" />
 				<View style={styles.titleWrapper}>
 					<Text style={styles.city}>{city}, </Text>
+					<Text style={styles.country}>{state}, </Text>
 					<Text style={styles.country}>{country}</Text>
 				</View>
 			</TouchableOpacity>

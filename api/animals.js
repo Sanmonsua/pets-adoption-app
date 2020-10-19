@@ -20,9 +20,20 @@ function formatAnimals(animals) {
 	}))
 }
 
+function formatTypes(types) {
+	return types.map(({ name }) => ({ name, value: name }))
+}
+
 export async function searchAnimals(params = {}) {
 	var {
 		data: { animals },
 	} = await client.animal.search(params)
 	return formatAnimals(animals)
+}
+
+export async function getAnimalTypes() {
+	var {
+		data: { types },
+	} = await client.animalData.types()
+	return formatTypes(types)
 }

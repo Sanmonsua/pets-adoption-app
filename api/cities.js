@@ -18,7 +18,7 @@ function formatRecords(records) {
 
 export async function searchCities(q) {
 	var query = q.split(' ').join('+')
-	var params = `search/?dataset=worldcitiespop&q=${query}&sort=population`
+	var params = `search/?dataset=worldcitiespop&q=${query}&sort=population&refine.country=us`
 	var result = await fetch(URL + params)
 	var { records } = await result.json()
 	return records !== undefined ? formatRecords(records) : []

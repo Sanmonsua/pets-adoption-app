@@ -4,16 +4,16 @@ export const types = [
 		active: true,
 	},
 	{
-		name: 'Dogs',
+		name: 'Dog',
 	},
 	{
-		name: 'Cats',
+		name: 'Cat',
 	},
 	{
-		name: 'Birds',
+		name: 'Rabbit',
 	},
 	{
-		name: 'Others',
+		name: 'Horse',
 	},
 ]
 

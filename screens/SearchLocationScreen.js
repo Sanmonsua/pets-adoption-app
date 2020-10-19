@@ -8,14 +8,17 @@ export default function SearchLocationScreen() {
 	var [search, setSearch] = useState('')
 	var [locations, setLocations] = useState([])
 
-	useEffect(() => {
-		getLocations()
+	useEffect(
+		function onChangeSearchEffect() {
+			getLocations()
 
-		async function getLocations() {
-			let cities = await searchCities(search)
-			setLocations(cities)
-		}
-	}, [search])
+			async function getLocations() {
+				var cities = await searchCities(search)
+				setLocations(cities)
+			}
+		},
+		[search]
+	)
 
 	return (
 		<View style={styles.container}>
