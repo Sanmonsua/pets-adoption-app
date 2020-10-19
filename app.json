@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "pets",
-    "slug": "pets",
+    "name": "Adopt Me",
+    "slug": "adopt-me",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#57419d"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Mobile app for finding pets to adopt by location and type. Using Pet Finder API.",
+    "githubUrl": "https://github.com/Sanmonsua/pets-adoption-app"
   }
 }
