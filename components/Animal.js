@@ -2,9 +2,9 @@ import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
-export default function Animal({ name, species, picture }) {
+export default function Animal({ name, species, picture, onPress }) {
 	return (
-		<TouchableOpacity style={styles.container}>
+		<TouchableOpacity onPress={onPress} style={styles.container}>
 			<Image style={styles.image} source={{ uri: picture }} />
 			<View style={styles.textWrapper}>
 				<Text numberOfLines={1} style={styles.text}>

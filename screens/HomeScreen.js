@@ -53,6 +53,10 @@ export default function HomeScreen({ navigation }) {
 		dispatch(setType(t))
 	}
 
+	function onPressAnimal(animal) {
+		navigation.navigate('Animal', animal)
+	}
+
 	return (
 		<View style={styles.container}>
 			<Location
@@ -70,7 +74,7 @@ export default function HomeScreen({ navigation }) {
 				<View style={styles.loadingWrapper}>
 					<ActivityIndicator size="large" color="#57419d" />
 				</View>
-			)) || <AnimalsList animals={animals} />}
+			)) || <AnimalsList animals={animals} onSelect={onPressAnimal} />}
 		</View>
 	)
 }
