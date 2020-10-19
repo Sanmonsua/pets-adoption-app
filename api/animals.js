@@ -6,18 +6,20 @@ const client = new Client({
 })
 
 function formatAnimals(animals) {
-	return animals.map(({ id, name, species, photos: [first] }) => ({
-		id,
-		name,
-		species,
-		picture: first
-			? first.small
-			: species == 'Cat'
-			? `http://placekitten.com/200/${Math.floor(
-					Math.random() * 200 + 200
-			  )}`
-			: 'https://placedog.net/500',
-	}))
+	return animals.map(function processAnimal(animal) {
+		var { photos: [first] = [], species } = animal
+		console.log(animal)
+		return {
+			...animal,
+			picture: first
+				? first.small
+				: species == 'Cat'
+				? `http://placekitten.com/200/${Math.floor(
+						Math.random() * 200 + 200
+				  )}`
+				: 'https://placedog.net/500',
+		}
+	})
 }
 
 function formatTypes(types) {
